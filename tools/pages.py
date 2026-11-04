@@ -14,7 +14,7 @@ PAGES = {
     'descale': ('How to descale a Bambino or Bambino Plus, step by step',
                 'Descale light on your Breville / Sage Bambino Plus (1 CUP + STEAM alternating with 2 CUP) or Bambino (2 CUP keeps blinking)? What you need and each step.'),
     'steam': ('Bambino Plus steam wand blocked: milk lights flashing',
-              'All the milk lights blinking and STEAM off on your Breville / Sage Bambino Plus? The steam wand tip is blocked. How to clear it, step by step.'),
+              'MILK TEMP and MILK FOAM lights blinking and STEAM off on your Breville / Sage Bambino Plus? The steam wand tip is blocked. How to clear it, step by step.'),
     'supplies': ('Bambino cleaning tablets vs descaler: which one you need',
                  'Cleaning tablets and descaler do different jobs on a Breville / Sage Bambino or Bambino Plus. Which one your light is asking for, and where each one goes.'),
 }
