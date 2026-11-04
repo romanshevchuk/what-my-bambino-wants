@@ -32,7 +32,7 @@
       var m=el.dataset.m||'plus', st=parse(el.dataset.state), pr=parse(el.dataset.press), html='';
       KEYS[m].forEach(function(k){
         var cls=st[k]?(' '+st[k]):'', hold=pr[k];
-        html+='<span class="k'+(hold?' press':'')+'"'+(hold?' data-hold="'+hold+'"':'')+'><span class="b'+cls+'"></span><svg><use href="#'+ICON[k]+'"/></svg><span class="lb">'+LABEL[k]+'</span></span>';
+        html+='<span class="k'+(hold?' press':'')+'"'+(hold?' data-hold="'+hold+'"':'')+'><span class="b'+cls+'"></span><svg><use href="#'+ICON[k]+'"/></svg><span class="lb" data-nosnippet>'+LABEL[k]+'</span></span>';
       });
       if(m==='plus') html+='<span class="side"><span class="srow"><span class="slot red"></span><span class="b sm'+(st.t?' '+st.t:'')+'"></span><svg><use href="#i-t"/></svg></span><span class="srow"><span class="slot"></span><span class="b sm'+(st.f?' '+st.f:'')+'"></span><svg><use href="#i-j"/></svg></span></span>';
       el.innerHTML=html;
