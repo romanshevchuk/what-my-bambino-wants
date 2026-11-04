@@ -93,7 +93,7 @@ body:has(#home[hidden]) .foot{max-width:720px}
 .back::before{content:"";width:8px;height:8px;border-left:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(45deg)}
 
 /* First-visit hint under the heading: says which machine is shown, gone once the visitor picks or confirms */
-.mm-hint{margin-top:6px;font-size:.95rem;color:var(--muted)}
+.mm-hint{margin-top:-12px;font-size:.95rem;color:var(--muted)} /* sits close under the intro line, against .view's gap */
 body:not(.unpicked) .mm-hint{display:none}
 .mm-hint button{font:inherit;font-weight:700;color:var(--accent);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
 .mm-hint .mm-ok{margin-left:.4em;padding:0 .3em;font-size:1.15em;line-height:1;font-weight:400;color:var(--muted);text-decoration:none}
