@@ -169,6 +169,8 @@ body:not(.unpicked) .mm-hint{display:none}
   opacity:0;visibility:hidden;transform:translateY(6px) scale(.97);transform-origin:20px 100%;transition:opacity .15s,transform .15s,visibility 0s .15s;pointer-events:none}
 .pop::after{content:"";position:absolute;left:30px;top:100%;border:8px solid transparent;border-top-color:#fff}
 .zoom>.pop img{display:block;width:100%;height:auto;max-width:none;max-height:150px;object-fit:contain;margin-top:4px}
+.zoom.below>.pop{bottom:auto;top:calc(100% + 10px);transform-origin:20px 0}
+.zoom.below>.pop::after{top:auto;bottom:100%;border-top-color:transparent;border-bottom-color:#fff}
 .pop img:first-child{margin-top:0}
 .pop img+span,.pop span{color:#59616a;font-weight:400}
 /* hover opens after a short pause, so passing over a picture doesn't flash it; off while the pointer hasn't moved since a view change */

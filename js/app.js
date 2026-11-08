@@ -69,6 +69,13 @@
       });
       z.appendChild(pop);
       if(z.tagName!=='BUTTON'){z.tabIndex=0;z.setAttribute('role','button');z.setAttribute('aria-label','Show a bigger picture');}
+      /* open upwards by default; drop below the picture when the top of the window has no room for it */
+      function flip(){
+        if(z.classList.contains('big')||getComputedStyle(pop).position==='fixed')return;
+        var r=z.getBoundingClientRect(),h=pop.offsetHeight+18;
+        z.classList.toggle('below',r.top<h&&window.innerHeight-r.bottom>r.top);
+      }
+      z.addEventListener('mouseenter',flip);z.addEventListener('focus',flip);z.addEventListener('pointerdown',flip);
       z.addEventListener('click',function(){var on=!z.classList.contains('open');zooms.forEach(function(o){o.classList.remove('open');});z.classList.toggle('open',on);});
     });
 
