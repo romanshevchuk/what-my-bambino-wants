@@ -162,13 +162,13 @@ body:not(.unpicked) .mm-hint{display:none}
 
 /* Big picture popup, built by app.js from the images inside any .zoom */
 .zoom{position:relative;cursor:zoom-in}
-.pop{position:absolute;z-index:30;left:-4px;bottom:calc(100% + 10px);width:min(280px,calc(100vw - 40px));
+.pop{position:absolute;z-index:30;left:calc(-4px + var(--dx,0px));bottom:calc(100% + 10px);width:min(320px,calc(100vw - 40px));
   display:flex;flex-direction:column;gap:6px;padding:14px;background:#fff;color:#121518;border-radius:12px;
   box-shadow:0 0 0 1px rgba(15,20,25,.08),0 14px 40px rgba(15,20,25,.28);
   font-size:.85rem;font-weight:700;line-height:1.3;text-align:left;
   opacity:0;visibility:hidden;transform:translateY(6px) scale(.97);transform-origin:20px 100%;transition:opacity .15s,transform .15s,visibility 0s .15s;pointer-events:none}
-.pop::after{content:"";position:absolute;left:30px;top:100%;border:8px solid transparent;border-top-color:#fff}
-.zoom>.pop img{display:block;width:100%;height:auto;max-width:none;max-height:150px;object-fit:contain;margin-top:4px}
+.pop::after{content:"";position:absolute;left:calc(30px - var(--dx,0px));top:100%;border:8px solid transparent;border-top-color:#fff}
+.zoom>.pop img{display:block;width:100%;height:auto;max-width:none;max-height:170px;object-fit:contain;margin-top:4px}
 .zoom.below>.pop{bottom:auto;top:calc(100% + 10px);transform-origin:20px 0}
 .zoom.below>.pop::after{top:auto;bottom:100%;border-top-color:transparent;border-bottom-color:#fff}
 .pop img:first-child{margin-top:0}
@@ -256,9 +256,9 @@ ol.steps .bp{--s:.66;margin-top:10px;display:flex;width:fit-content}
 .layers figcaption{font-size:.82rem;font-weight:700;color:var(--muted)}
 .layers{position:relative}
 .layers .zoom{position:static}
-.layers .pop{left:0;right:0;width:auto;max-width:420px;margin:0 auto}
+.layers .pop{left:0;right:0;width:auto;max-width:480px;margin:0 auto}
 .layers .pop::after{display:none}
-.layers .zoom>.pop img{max-height:260px}
+.layers .zoom>.pop img{max-height:295px}
 @media (hover:hover){.zoom.tap:hover>.pop{opacity:0;visibility:hidden}.zoom.tap.open>.pop{opacity:1;visibility:visible}}
 .step-ph{display:block;height:200px;width:auto;margin-top:12px;border-radius:8px;cursor:default}
 .tip{margin-top:8px;font-size:.92rem;color:var(--muted)}

@@ -72,8 +72,16 @@
       /* open upwards by default; drop below the picture when the top of the window has no room for it */
       function flip(){
         if(z.classList.contains('big')||getComputedStyle(pop).position==='fixed')return;
-        var r=z.getBoundingClientRect(),h=pop.offsetHeight+18;
-        z.classList.toggle('below',r.top<h&&window.innerHeight-r.bottom>r.top);
+        var imgs=pop.querySelectorAll('img');imgs.forEach(function(i){i.style.removeProperty('max-height');});
+        var r=z.getBoundingClientRect(),h=pop.offsetHeight+18,up=r.top,down=window.innerHeight-r.bottom;
+        z.classList.toggle('below',up<h&&down>up);
+        /* too tall for either side (short window): shrink the pictures to what is left */
+        var room=(z.classList.contains('below')?down:up)-18;
+        if(h-18>room)imgs.forEach(function(i){i.style.maxHeight=Math.max(60,i.offsetHeight-(h-18-room)/imgs.length)+'px';});
+        /* and sideways: slide it back inside the window (the arrow keeps pointing at the picture) */
+        pop.style.removeProperty('--dx');
+        var p=pop.getBoundingClientRect(),w=document.documentElement.clientWidth,dx=p.left<8?8-p.left:p.right>w-8?w-8-p.right:0;
+        if(dx)pop.style.setProperty('--dx',Math.round(dx)+'px');
       }
       z.addEventListener('mouseenter',flip);z.addEventListener('focus',flip);z.addEventListener('pointerdown',flip);
       z.addEventListener('click',function(){var on=!z.classList.contains('open');zooms.forEach(function(o){o.classList.remove('open');});z.classList.toggle('open',on);});
